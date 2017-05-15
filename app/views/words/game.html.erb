@@ -1,0 +1,13 @@
+<h1>Words#game</h1>
+<p>Find me in app/views/words/game.html.erb</p>
+
+<form action="/score" action="get">
+  <label for="question">Choose a word with <%= @grid %> characters</label>
+  <% @grid.each do |role| %>
+    <%= hidden_field_tag "grid[]", role %>
+<% end %>
+  <input type="hidden" id ="start_time" name="start_time" value = '<%= @start_time %>'>
+  <input type="text" id="word" name="word" placeholder="Choose a word">
+  <input type="submit" value="Go!">
+</form>
+
